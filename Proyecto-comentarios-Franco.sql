@@ -5,6 +5,8 @@ CREATE DATABASE
              
 USE comentarios_google;
 
+-- Tabla Restaurantes
+
 CREATE TABLE Restaurantes (
         IdRestaurante INT NOT NULL AUTO_INCREMENT 
         , Nombre_restaurante VARCHAR(250) NOT NULL
@@ -14,6 +16,8 @@ CREATE TABLE Restaurantes (
         , Total_comentarios INT NOT NULL
         , PRIMARY KEY(IdRestaurante)
 );
+
+-- Tabla Comentarios
 
 CREATE TABLE Comentarios (
         IdComentario INT NOT NULL AUTO_INCREMENT 
@@ -26,6 +30,8 @@ CREATE TABLE Comentarios (
         , PRIMARY KEY(IdComentario)
 );
 
+-- Tabla Usuarios
+
 CREATE TABLE Usuarios(
         IdUsuario INT NOT NULL AUTO_INCREMENT 
         , Nombre_usuario VARCHAR(250) NOT NULL
@@ -33,16 +39,22 @@ CREATE TABLE Usuarios(
         , PRIMARY KEY(IdUsuario)
 );
 
+-- Tabla categorias
+
 CREATE TABLE Categorias (
         IdCategoria INT NOT NULL AUTO_INCREMENT 
         , Nombre_categoria VARCHAR(250) NOT NULL
         , PRIMARY KEY(IdCategoria)
 );
 
+-- Tabla categoria de los restaurantes
+
 CREATE TABLE Restaurante_categorias (
         IdRestaurante INT NOT NULL  -- > FK
         , IdCategoria INT NOT NULL  -- > FK
 );
+
+-- Tabla de las fotos que suben los usuarios en cada comentario
 
 CREATE TABLE Fotos (
         IdFoto INT NOT NULL AUTO_INCREMENT 
@@ -51,7 +63,7 @@ CREATE TABLE Fotos (
         , PRIMARY KEY(IdFoto)
 );
 
-
+-- Inclusion de las Foreign key (FK) de cada tabla: 
 
 ALTER TABLE Comentarios
 ADD CONSTRAINT fk_IdRestaurante_id
