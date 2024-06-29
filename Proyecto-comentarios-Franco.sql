@@ -50,7 +50,7 @@ CREATE TABLE Categorias (
 -- Tabla categoria de los restaurantes
 
 CREATE TABLE Restaurante_categorias (
-        IdRestaurante INT NOT NULL  -- > FK
+        Restaurante INT NOT NULL  -- > FK
         , IdCategoria INT NOT NULL  -- > FK
 );
 
@@ -76,8 +76,8 @@ FOREIGN KEY (IdUsuario) REFERENCES Usuarios (IdUsuario);
 
 
 ALTER TABLE Restaurante_categorias 
-ADD CONSTRAINT fk_IdRestaurante_id
-FOREIGN KEY (IdRestaurante) REFERENCES Restaurantes (IdRestaurante);
+ADD CONSTRAINT fk_Restaurante_id
+FOREIGN KEY (Restaurante) REFERENCES Restaurantes (IdRestaurante);
 
 
 ALTER TABLE Restaurante_categorias 
