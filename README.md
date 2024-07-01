@@ -53,8 +53,8 @@ En resumen, esta base de datos proporciona una estructura para gestionar y anali
 ## Diagrama entidad relación (DER)
 
 
+![diagrama_entidad_relacion drawio (2)](https://github.com/JuanIgnacio23/Proyecto_rese-as_Franco/assets/169690079/3690f44f-997d-4538-9a7f-32d9726c451c)
 
-  
 
 
    
