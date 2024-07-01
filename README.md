@@ -4,9 +4,13 @@ Se esta trabajando en el analisis de la competencia y demanda en la zona urbana 
 
 ## Descripción del problema:
 
-1. **  **
+1.**Gestión de usuarios y restaurantes**: Necesitamos una base de datos que nos permita registrar la información de los usuarios que consumieron en los restaurantes, así como de los restaurantes involucrados en en cada uno de los comentarios, marcando una percepcion de los clientes sobre el restaurante.
 
-2. 
+2.**Gestión de Categorías de restaurantes**: Es importante poder clasificar los restaurantes según su tipo, un restaurante de hamburgueseria o rotiseria y que tipo de servicio brinda. Esto nos ayudará a entender la diversificacion de los nichos del mercado y como valorizan los usuarios cada uno de estos segmentos.
+
+3.**Gestión de Comentarios**: La base de datos debe permitirnos registrar cada uno de los comentarios y calificaciones que se generan para cada restaurante, asi como tambien el usuario que lo genera. Esto es fundamental para conocer y analizar que es lo que esperan o valoran los usuarios de los restaurantes que visitan.
+
+4.**Registro de Fotografias**: Necesitamos un sistema que pueda registrar las imagenes que los usuarios publican junto a su comentario, con el fin de la percepcion visual del usuario cuando recuerda aquel restaurante sobre el que dejo una reseña.
 
 
 ## Objetivo:
