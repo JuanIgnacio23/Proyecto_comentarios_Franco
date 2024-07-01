@@ -46,10 +46,10 @@ Esta base de datos está diseñada para gestionar comentarios de restaurantes en
 
 ## Problemática Resuelta:
 Esta base de datos permite gestionar las reseñas de los restaurantes y las demandas y/o valoraciones de los usuarios desde los comentarios de Google sobre los restaurantes de la ciudad. Algunos aspectos que abordan incluyen:
-       Registro de los usuarios y los restaurantes involucrados.
-       Clasificación de los comentarios y restaurantes según su tipo.
-       Imagen que los usuarios relacionan con el restaurante.
-       Registro del comentario realizado por los usuarios.
+- Registro de los usuarios y los restaurantes involucrados.
+- Clasificación de los comentarios y restaurantes según su tipo.
+- Imagen que los usuarios relacionan con el restaurante.
+- Registro del comentario realizado por los usuarios.
 
 En resumen, esta base de datos proporciona una estructura para gestionar y analizar eficientemente las percepciones de los usuarios sobres los restaurantes de la ciudad, lo que contribuye a que el nuevo restaurante de la ciudad encuentre fuerzas, oportunidades, debilidades y amenazas en el mercado.
 
