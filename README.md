@@ -56,8 +56,38 @@ En resumen, esta base de datos proporciona una estructura para gestionar y anali
 
 ## Diagrama entidad relación (DER)
 
+```
++----------------+
+|   USUARIOS     |
++----------------+
+| IDUSUARIO PF   |
+|NOMBRE_USUARIO  |
+|TOTAL_COMENTARIO|
++----------------+
+        | 1 a *
++-------------------+       +-------------------+          +--------------------------+      
+|   COMENTARIO      |       |    RESTAURANTE    |          |  RESTAURANTE_CATEGORIAS  |      
++-------------------+       +-------------------+  1 a *   +--------------------------+      
+| IDCOMENTARIO P    | * a 1 | IDRESTAURANTE PK  | <------- | IDCATEGORIA FK           |     
+| IDRESTUARANTE FK  |<------| NOMNRE_RESTAURANTE|          | RESTAURANTE FK           |
+| IDUSUARIO   FK    |       | DIRECCION         |          +--------------------------+ 
+| RATING            |       | REGION            |                        |
+| COMENTARIO        |       | RATING            |                1 a *   |
+| FECHA_COMENTARIO  |       | TOTAL_COMENTARIO  |              +-------------------+
+|   USUARIOS        |       +-------------------+              |    CATEGORIA      |  
++-------------------+                                          +-------------------+                                                                                            
+         |                                                     | IDCATEGORIA PK    |
+         |  * a 1                                              | NOMBRE_CATEGORIA  |
+         |                                                     +-------------------+
+ +------------------+
+ |      FOTOS       |
+ +------------------+
+ | IDFOTO PF        |
+ | IDCOMENTARIO FK  |
+ | URL_FOTO         |
+ +------------------+
 
-![diagrama_entidad_relacion drawio (2)](https://github.com/JuanIgnacio23/Proyecto_rese-as_Franco/assets/169690079/3690f44f-997d-4538-9a7f-32d9726c451c)
+```
 
 
 
