@@ -4,11 +4,23 @@ USE comentarios_google;
 
 SET GLOBAL local_infile = true;
 
-LOAD DATA LOCAL INFILE'.\data_csv\Comentarios.csv'
+OAD DATA LOCAL INFILE'Restaurantes.csv'
+INTO TABLE comentarios_google.Restaurantes
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+ ( nombre_restaurante 
+  , direccion 
+  , region 
+  , rating 
+  , total_comentarios);
+
+  --
+
+LOAD DATA LOCAL INFILE'Comentarios.csv'
 INTO TABLE comentarios_google.Comentarios
 FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
+LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 ( rating 
   , comentario 
@@ -17,13 +29,22 @@ IGNORE 1 ROWS
 
 --
 
+LOAD DATA LOCAL INFILE'Usuarios.csv'
+INTO TABLE comentarios_google.Usuarios
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(nombre_usuario 
+ , total_comentarios);
+
+ --
+
 SET GLOBAL local_infile = true;
 
-LOAD DATA LOCAL INFILE'./data/Categorias.csv'
+LOAD DATA LOCAL INFILE'Categorias.csv'
 INTO TABLE comentarios_google.Categorias
 FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
+LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (nombre_categoria);
 
@@ -31,37 +52,10 @@ IGNORE 1 ROWS
 
 SET GLOBAL local_infile = true;
 
-LOAD DATA LOCAL INFILE'.\data_csv\Fotos.csv'
+LOAD DATA LOCAL INFILE'Fotos.csv'
 INTO TABLE comentarios_google.Fotos
 FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
+LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (URL_FOTO);
 
---
-
-SET GLOBAL local_infile = true;
-
-LOAD DATA LOCAL INFILE'.\data_csv\Restaurantes.csv'
-INTO TABLE comentarios_google.Restaurantes
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
-IGNORE 1 ROWS
- ( nombre_restaurante 
-  , direccion 
-  , region 
-  , rating 
-  , total_comentarios);
-
---
-
-LOAD DATA LOCAL INFILE'.\data_csv\Usuarios.csv'
-INTO TABLE comentarios_google.Usuarios
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
-IGNORE 1 ROWS
-(nombre_usuario 
- , total_comentarios);
