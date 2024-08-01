@@ -4,7 +4,7 @@ DROP FUNCTION IF EXISTS comentarios_region;
 DROP FUNCTION IF EXISTS rating_categorias;
 
 
--- Fución para obtener el promedio de rating de un restaurante:
+-- Función para obtener el numero de comentarios acumulado por region:
 
 DELIMITER //
 
@@ -29,8 +29,8 @@ DELIMITER ;
 
 
   
--- Fucion para obtener la puntuacion que podria obtener cada una de las categorias en base al rating que obtuvo cada uno de los restaurantes incluidos en cada una de las categorias
-
+-- 
+Fucion para obtener la puntuacion que podria obtener cada una de las categorias en base al rating que obtuvo cada uno de los restaurantes incluidos en cada una de las categorias
 DELIMITER // 
 
 CREATE FUNCTION rating_categorias (categorias_nombre VARCHAR (250)) RETURNS FLOAT
