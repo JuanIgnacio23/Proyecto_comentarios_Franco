@@ -64,30 +64,32 @@ En resumen, esta base de datos proporciona una estructura para gestionar y anali
 |NOMBRE_USUARIO  |
 |TOTAL_COMENTARIO|
 +----------------+
-        | 1 a *
+        | 1:n
 +-------------------+       +-------------------+          +--------------------------+      
 |   COMENTARIO      |       |    RESTAURANTE    |          |  RESTAURANTE_CATEGORIAS  |      
-+-------------------+       +-------------------+  1 a *   +--------------------------+      
-| IDCOMENTARIO P    | * a 1 | IDRESTAURANTE PK  | <------- | IDCATEGORIA FK           |     
++-------------------+       +-------------------+   1:n    +--------------------------+      
+| IDCOMENTARIO P    |  n:1  | IDRESTAURANTE PK  | <------- | IDCATEGORIA FK           |     
 | IDRESTUARANTE FK  |<------| NOMNRE_RESTAURANTE|          | RESTAURANTE FK           |
 | IDUSUARIO   FK    |       | DIRECCION         |          +--------------------------+ 
 | RATING            |       | REGION            |                        |
-| COMENTARIO        |       | RATING            |                1 a *   |
-| FECHA_COMENTARIO  |       | TOTAL_COMENTARIO  |              +-------------------+
-|   USUARIOS        |       +-------------------+              |    CATEGORIA      |  
-+-------------------+                                          +-------------------+                                                                                            
-         |                                                     | IDCATEGORIA PK    |
-         |  * a 1                                              | NOMBRE_CATEGORIA  |
-         |                                                     +-------------------+
- +------------------+
- |      FOTOS       |
- +------------------+
- | IDFOTO PF        |
- | IDCOMENTARIO FK  |
- | URL_FOTO         |
- +------------------+
+| COMENTARIO        |       | RATING            |                        |    1:n
+|   USUARIOS        |       | TOTAL_COMENTARIO  | <----------- +-------------------+
+|                   |       +-------------------+      n:1     |    CATEGORIA      |  
++-------------------+                 |                        +------------------+                                     |                        |                   |           
+                                      |                        | IDCATEGORIA PK    |
+                                      |  n:1                   | NOMBRE_CATEGORIA  |
+                                      |                        +-------------------+
+                              +------------------+
+                              |    ADVERTENCIAS  |
+                              +------------------+
+                              | ID_RESTAURANTE FK|
+                              | MENSAJE          |
+                              | FECHA            |
+                              +------------------+
 
 ```
+
+
 
 
 

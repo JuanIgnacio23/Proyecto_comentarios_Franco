@@ -2,77 +2,95 @@
 
 USE comentarios.google;
 
-SELECT 
-    TABLE_NAME, 
-    TABLE_COMMENT
-FROM 
-    INFORMATION_SCHEMA.TABLES
-WHERE 
-    TABLE_SCHEMA = 'my_database_change_me';
-
 
 -- VERIFICACION DE IMPORTACION
 
-SELECT 
-    table_name AS `Table`, 
-    table_rows AS `Row Count`
-FROM 
-    information_schema.tables
-WHERE 
-    table_schema = 'my_database_change_me'
-ORDER BY 
-    table_rows DESC;
+SELECT *
+FROM Categorias;
+
+SELECT *
+FROM Usuarios;
+
+SELECT *
+FROM Restaurantes;
+
+SELECT *
+FROM restaurante_categorias;
+
+SELECT *
+FROM Comentarios;
+
+SELECT *
+FROM advertencias;
 
 
 -- VERIFICACION DE VISTAS
+
+SELECT * FROM vista_comentarios_restaurantes;
+
 SELECT 
-    TABLE_NAME AS `Vista`,
-    TABLE_TYPE AS `Tipo`
-FROM 
-    INFORMATION_SCHEMA.TABLES
-WHERE 
-    TABLE_SCHEMA = 'my_database_change_me' 
-    AND TABLE_TYPE = 'VIEW'
-ORDER BY 
-    TABLE_NAME;
+	 r.id_restaurante
+     ,r.nombre_restaurante
+     ,COUNT(c.id_comentario) AS total_comentarios
+	 ,AVG(c.rating) AS promedio_rating
+FROM Restaurantes r
+LEFT JOIN Comentarios c 
+ON r.id_restaurante = c.id_restaurante
+GROUP BY r.id_restaurante, r.nombre_restaurante;
+
+
+SELECT * FROM vista_comentarios_populares;
+
+SELECT
+    c.id_comentario
+    ,r.nombre_restaurante
+    ,u.nombre_usuario
+    ,c.rating
+    ,c.comentario
+    ,c.votos_comentario
+FROM Comentarios AS c
+JOIN Restaurantes AS r 
+ON c.id_restaurante = r.id_restaurante
+JOIN Usuarios AS u 
+ON c.id_usuario = u.id_usuario
+ORDER BY c.votos_comentario DESC;
+
+
 
 -- VERIFICACION DE FUNCIONES
-SELECT 
-    ROUTINE_NAME AS `Función`,
-    DATA_TYPE AS `Tipo de Retorno`
-FROM 
-    INFORMATION_SCHEMA.ROUTINES
-WHERE 
-    ROUTINE_SCHEMA = 'my_database_change_me' 
-    AND ROUTINE_TYPE = 'FUNCTION'
-ORDER BY 
-    ROUTINE_NAME;
+
+SELECT comentarios_region('Norte');
+
+SELECT COUNT(*)
+FROM comentarios AS c
+JOIN restaurantes AS r
+ON c.id_restaurante = r.id_restaurante
+WHERE r.region = 'Norte';
+
+ SELECT rating_categorias ('familiar')
+
+SELECT AVG(rating)
+     INTO avg_rating
+     FROM restaurantes AS r
+     JOIN Restaurante_categorias  AS rc
+     ON r.id_restaurante = rc.restaurante
+     JOIN Categorias AS c
+     ON rc.id_categoria = c.id_categoria
+     WHERE c.nombre_categoria = 'familiar';
+
 
 -- VERIFICACION DE PROCEDURES
 
-SELECT 
-    ROUTINE_NAME AS `Procedimiento`,
-    ROUTINE_TYPE AS `Tipo`
-FROM 
-    INFORMATION_SCHEMA.ROUTINES
-WHERE 
-    ROUTINE_SCHEMA = 'my_database_change_me' 
-    AND ROUTINE_TYPE = 'PROCEDURE'
-ORDER BY 
-    ROUTINE_NAME;
+SELECT id_restaurante, region
+FROM Restaurantes;
+
+SELECT id_restaurante, tipo_comentario
+FROM Restaurantes;
 
 -- VERIFICACION DE TRIGGERS
 
-SELECT 
-    TRIGGER_NAME AS `Nombre del Trigger`,
-    EVENT_MANIPULATION AS `Evento`,
-    EVENT_OBJECT_TABLE AS `Tabla`,
-    ACTION_TIMING AS `Momento`
-FROM 
-    INFORMATION_SCHEMA.TRIGGERS
-WHERE 
-    TRIGGER_SCHEMA = 'my_database_change_me'
-ORDER BY 
-    EVENT_OBJECT_TABLE, 
-    ACTION_TIMING, 
-    EVENT_MANIPULATION;
+INSERT INTO restaurantes (nombre_restaurante, direccion, region, rating, total_comentarios, id_categoria)
+VALUES ('Restaurante Popular', '123 Main St', 'Centro', 4.5, 150, 1);
+
+INSERT INTO restaurantes (nombre_restaurante, direccion, region, rating, total_comentarios, id_categoria)
+VALUES ('Restaurante Poco Popular', '456 Elm St', 'Norte', 3.0, 5, 2);
