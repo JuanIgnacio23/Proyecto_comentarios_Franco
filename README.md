@@ -1,4 +1,4 @@
-# Segunda entrega 
+# Entrega de proyecto final
 
 * Alumno: Juan Ignacio Franco
 
@@ -332,3 +332,27 @@ En resumen, esta base de datos proporciona una estructura para gestionar y anali
 #### Ejemplo:
 * Se inserta un nuevo cliente y su total de comentarios en la tabla Restaurantes.
 * El trigger registra la acción en la tabla Restaurantes con los detalles correspondientes.
+
+# Roles y permisos
+``
+./objects/user_roles.sql
+``
+
+Se genera dos roles:
+
+1. ``role_crud_tables`` : Este rol tiene permisos para generar CRUD  en todas las tablas de la base de datos.
+2. ``role_select_tables`` : Este rol tiene permisos solo para SELECT en todas las tablas de la base de datos.
+
+Además, se crea dos usuarios para el primer rol y tres usuarios para el segundo y se les asigna los roles correspondientes.
+
+# Back up de la base de datos
+
+Se puede generar un comando en el archivo ``make backup`` que me permite ejecutar un backup de manera manual.
+
+# Herramientas y tecnologias utilizadas
+
+* Makefile (para generar una interfaz de procesos)
+* Docker (para generar un container)
+* MySQL (motor de bases de datos)
+* MySQL Workbench (interfaz grafica)
+* Mockaroo (para otorgar datos ficticios)

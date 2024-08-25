@@ -94,3 +94,11 @@ VALUES ('Restaurante Popular', '123 Main St', 'Centro', 4.5, 150, 1);
 
 INSERT INTO restaurantes (nombre_restaurante, direccion, region, rating, total_comentarios, id_categoria)
 VALUES ('Restaurante Poco Popular', '456 Elm St', 'Norte', 3.0, 5, 2);
+
+-- Verificación de permisos
+
+SHOW GRANTS FOR 'Usuario1'@'%';
+SHOW GRANTS FOR 'Usuario2'@'%';
+SHOW GRANTS FOR 'Usuario3'@'%';
+SHOW GRANTS FOR 'Usuario4'@'%';
+SHOW GRANTS FOR 'Usuario5'@'%';

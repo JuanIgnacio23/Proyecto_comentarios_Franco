@@ -1,14 +1,14 @@
 USE comentarios_google;
 
--- Creación dos areas
+-- Creación de roles
 
-CREATE ROLE 'DEV', 'QA';
+CREATE ROLE 'role_crud_tables', 'role_select_tables';
 
--- Creación los permisos
+-- Creación de permisos
 
-GRANT ALL ON comentarios_google.* TO 'DEV';
-GRANT SELECT ON comentarios_google.* TO 'QA';
-GRANT INSERT, UPDATE, DELETE ON comentarios_google.* TO 'DEV';
+GRANT ALL ON comentarios_google.* TO 'role_crud_tables';
+GRANT SELECT ON comentarios_google.* TO 'role_select_tables';
+GRANT INSERT, UPDATE, DELETE ON comentarios_google.* TO 'role_crud_tables';
 
 -- Creación de usuarios
 
@@ -18,42 +18,38 @@ DROP USER IF EXISTS 'Usuario1'@'%',
                     'Usuario4'@'%',
                     'Usuario5'@'%';
                    
--- DEV
+-- role_crud_tables
 
 CREATE USER 'Usuario1'@'%' IDENTIFIED BY 'abc';
 CREATE USER 'Usuario2'@'%' IDENTIFIED BY 'abc';
 CREATE USER 'Usuario3'@'%' IDENTIFIED BY 'abc';
 
--- QA
+-- role_select_tables
 
 CREATE USER 'Usuario4'@'%' IDENTIFIED BY 'cba';
 CREATE USER 'Usuario5'@'%' IDENTIFIED BY 'cba';
 
 -- Otorgamiento de roles
 
-GRANT 'DEV' TO
+GRANT 'role_crud_tables' TO
      'Usuario1'@'%',
      'Usuario2'@'%',
      'Usuario3'@'%';
 
-GRANT 'QA' TO
+GRANT 'role_select_tables' TO
      'Usuario4'@'%',
      'Usuario5'@'%';
 
 -- Otorgamiento de DEFAULT ROLES
-SET DEFAULT ROLE 'DEV' TO
+SET DEFAULT ROLE 'role_crud_tables' TO
             'Usuario1'@'%',
             'Usuario2'@'%', 
             'Usuario3'@'%';
 
-SET DEFAULT ROLE 'QA' TO
+SET DEFAULT ROLE 'role_select_tables' TO
             'Usuario4'@'%', 
             'Usuario5'@'%';
 
 FLUSH PRIVILEGES;
  
 
--- Verificación de permisos
-
-SHOW GRANTS FOR 'Usuario1'@'%';
-SHOW GRANTS FOR 'Usuario4'@'%';
