@@ -356,3 +356,9 @@ Se puede generar un comando en el archivo ``make backup`` que me permite ejecuta
 * MySQL (motor de bases de datos)
 * MySQL Workbench (interfaz grafica)
 * Mockaroo (para otorgar datos ficticios)
+
+# Como levantar el proyecto en CodeSpaces GitHub
+
+* env: Archivo con contraseñas y data secretas
+* Makefile: Abstracción de creación del proyecto
+* docker-compose.yml: Permite generar las bases de datos en forma de contenedores
