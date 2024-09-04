@@ -246,6 +246,21 @@ En resumen, esta base de datos proporciona una estructura para gestionar y anali
        SELECT * FROM vista_comentarios_populares
        ORDER BY votos_comentario DESC;
 ```
+ ### Vista: vista_restaurantes_alta_calificacion
+ 
+ #### Descripcion:  esta vista busca visualizar los comentarios con alta calificacion
+
+#### Columnas:
+ 
+   * id_restaurante: identificador unico del restaurante.
+   * nombre_restaurante: nombre del restaurante.
+   * rating: calificacion promedio del restaurante que envia el usuario.
+
+#### Ejemplo de consulta:
+``` SQL
+       SELECT * FROM vista_restaurantes_alta_calificacion
+       ORDER BY rating DESC;
+```
 
  ## Documentación de Funciones
 
