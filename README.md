@@ -290,21 +290,21 @@ En resumen, esta base de datos proporciona una estructura para gestionar y anali
 
 #### Ejemplo de consulta:
  ``` SQL
-       SELECT comentario_region('Sur');
+       SELECT comentario_region('sur');
 ``` 
 
- ### Funcion: rating_categorias
+ ### Funcion: rating_categoria
  
- #### Descripcion:  función para obtener la puntuacion que podria obtener cada una de las categorias en base al rating que obtuvo cada uno de los restaurantes incluidos en cada una de las categorias
+ #### Descripcion:  funcion para obtener el rating promedio de los restaurantes en una categoria especifica
 
 #### Parámetros: 
-* categorias_nombre: nombre de las categorias que integran los restaurantes.
+* categoria_nombre: nombre de las categorias que integran los restaurantes.
 #### Retorno:
 * avg_rating: rating promedio obtenido por la categoria.
 
 #### Ejemplo de consulta:
  ``` SQL
-       SELECT rating_categorias('familiar');
+       SELECT rating_categoria('familiar');
 ``` 
 
  ## Documentación de Procedimientos Almacenados
