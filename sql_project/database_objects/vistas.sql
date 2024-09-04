@@ -15,6 +15,7 @@ ON r.id_restaurante = c.id_restaurante
 GROUP BY r.id_restaurante, r.nombre_restaurante;
 
 
+
 -- Vista de comentarios populares
 
 CREATE VIEW vista_comentarios_populares AS
@@ -32,5 +33,17 @@ JOIN usuarios AS u
 ON c.id_usuario = u.id_usuario
 ORDER BY c.votos_comentario DESC;
      
+     
+-- Vista de comentarios con alta calificacion
+
+CREATE VIEW vista_restaurantes_alta_calificacion AS
+SELECT
+    r.id_restaurante,
+    r.nombre_restaurante,
+    r.rating
+FROM
+    restaurantes AS r
+WHERE
+    r.rating > 4.0;
 
 
