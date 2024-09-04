@@ -1,9 +1,13 @@
 USE comentarios_google;
 
+DROP VIEW IF EXISTS vista_comentarios_restaurantes ;
+DROP VIEW IF EXISTS vista_comentarios_populares;
+DROP VIEW IF EXISTS vista_restaurantes_alta_calificacion;
+DROP VIEW IF EXISTS vista_restaurantes_comentarios_region;
+
 -- Vista_comentarios_restaurantes: esta vista busca visualizar información de los restaurantes.
 
-CREATE VIEW 
-   vista_comentarios_restaurantes AS 
+CREATE VIEW vista_comentarios_restaurantes AS 
 SELECT 
 	 r.id_restaurante
      ,r.nombre_restaurante
@@ -46,4 +50,17 @@ FROM
 WHERE
     r.rating > 4.0;
 
+-- Vista para poder ver el numero de comentarios por region
+
+CREATE VIEW vista_comentarios_region AS
+SELECT
+    r.region,
+    COUNT(c.id_comentario) AS total_comentarios
+FROM
+    restaurantes AS r
+LEFT JOIN
+    comentarios AS c ON r.id_restaurante = c.id_restaurante
+GROUP BY
+    r.region
+LIMIT 4;
 
