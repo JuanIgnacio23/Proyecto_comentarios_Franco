@@ -62,10 +62,4 @@ CREATE TABLE advertencias (
     FOREIGN KEY (id_restaurante) REFERENCES restaurantes(id_restaurante)
 );
 
-CREATE TABLE usuarios_importantes(
-	id_usuario INT NOT NULL AUTO_INCREMENT,
-    nombre_usuario VARCHAR(250) NOT NULL,
-    total_comentarios INT,
-    PRIMARY KEY (id_usuario) 
-);
 

@@ -30,7 +30,7 @@ DELIMITER ;
 
   
 -- 
-Fucion para obtener la puntuacion que podria obtener cada una de las categorias en base al rating que obtuvo cada uno de los restaurantes incluidos en cada una de las categorias
+Funcion para obtener la puntuacion que podria obtener cada una de las categorias en base al rating que obtuvo cada uno de los restaurantes incluidos en cada una de las categorias
 DELIMITER // 
 
 CREATE FUNCTION rating_categorias (categorias_nombre VARCHAR (250)) RETURNS FLOAT
