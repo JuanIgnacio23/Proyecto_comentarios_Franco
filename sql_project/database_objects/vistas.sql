@@ -38,6 +38,7 @@ ON c.id_usuario = u.id_usuario
 ORDER BY c.votos_comentario DESC;
      
      
+     
 -- Vista de comentarios con alta calificacion
 
 CREATE VIEW vista_restaurantes_alta_calificacion AS
@@ -49,6 +50,8 @@ FROM
     restaurantes AS r
 WHERE
     r.rating > 4.0;
+
+
 
 -- Vista para poder ver el numero de comentarios por region
 
