@@ -2,6 +2,8 @@ USE comentarios_google;
 
 -- Creación de roles
 
+DROP ROLE if exists 'role_crud_tables', 'role_select_tables';
+
 CREATE ROLE 'role_crud_tables', 'role_select_tables';
 
 -- Creación de permisos

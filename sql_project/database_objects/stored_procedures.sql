@@ -9,7 +9,11 @@ SET SQL_SAFE_UPDATES = 0; -- > Se utilizo para poder ejecutar un "UPDATE" sin la
 
 
 ALTER TABLE restaurantes
-ADD COLUMN region_nuevo VARCHAR (50);
+ADD COLUMN region_nuevo VARCHAR (50) NOT NULL;
+
+UPDATE restaurantes
+SET region_nuevo = region;
+
 
 -- Procedure actualizar_region:
 
@@ -21,11 +25,11 @@ CREATE PROCEDURE actualizar_region()
 BEGIN
     UPDATE restaurantes
     SET region_nuevo = CASE
-    WHEN region = 1 THEN "Sur"
-    WHEN region = 2 THEN "Norte"
-    WHEN region = 3 THEN "Oeste"
-    WHEN region = 4 THEN "Este"
-    ELSE Region
+    WHEN region = 1 THEN "sur"
+    WHEN region = 2 THEN "norte"
+    WHEN region = 3 THEN "oeste"
+    WHEN region = 4 THEN "este"
+    ELSE region
 
 END;
     
@@ -33,20 +37,19 @@ END ; //
 
 DELIMITER ;
 
+CALL actualizar_region();
+
 
 ALTER TABLE restaurantes
 DROP COLUMN region; -- > Eliminacion de la columna con variables numericas
 
 
 ALTER TABLE restaurantes
-CHANGE COLUMN region_nuevo Region VARCHAR(50); -- > Cambio de columna
-
-
+CHANGE COLUMN region_nuevo region VARCHAR(50); -- > Cambio de columna
 
 
 
 -- Procedimiento para identificar los comentarios positivos y negativos.
-
 
 ALTER TABLE comentarios_google.comentarios
 ADD COLUMN tipo_comentario text;
@@ -68,5 +71,5 @@ END ; //
 
 DELIMITER ;
 
-
+CALL procedure_tipo_comentario();
 

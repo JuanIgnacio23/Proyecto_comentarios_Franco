@@ -14,8 +14,8 @@ WHERE
 -- VERIFICACION DE IMPORTACION
 
 SELECT 
-    table_name AS `Table`, 
-    table_rows AS `Row Count`
+    table_name AS 'Table', 
+    table_rows AS 'Row Count'
 FROM 
     information_schema.tables
 WHERE 
@@ -26,8 +26,8 @@ ORDER BY
 
 -- VERIFICACION DE VISTAS
 SELECT 
-    TABLE_NAME AS `Vista`,
-    TABLE_TYPE AS `Tipo`
+    TABLE_NAME AS 'Vista',
+    TABLE_TYPE AS 'Tipo'
 FROM 
     INFORMATION_SCHEMA.TABLES
 WHERE 
@@ -38,8 +38,8 @@ ORDER BY
 
 -- VERIFICACION DE FUNCIONES
 SELECT 
-    ROUTINE_NAME AS `Función`,
-    DATA_TYPE AS `Tipo de Retorno`
+    ROUTINE_NAME AS 'Función',
+    DATA_TYPE AS 'Tipo de Retorno'
 FROM 
     INFORMATION_SCHEMA.ROUTINES
 WHERE 
@@ -51,8 +51,8 @@ ORDER BY
 -- VERIFICACION DE PROCEDURES
 
 SELECT 
-    ROUTINE_NAME AS `Procedimiento`,
-    ROUTINE_TYPE AS `Tipo`
+    ROUTINE_NAME AS 'Procedimiento',
+    ROUTINE_TYPE AS 'Tipo'
 FROM 
     INFORMATION_SCHEMA.ROUTINES
 WHERE 
@@ -64,10 +64,10 @@ ORDER BY
 -- VERIFICACION DE TRIGGERS
 
 SELECT 
-    TRIGGER_NAME AS `Nombre del Trigger`,
-    EVENT_MANIPULATION AS `Evento`,
-    EVENT_OBJECT_TABLE AS `Tabla`,
-    ACTION_TIMING AS `Momento`
+    TRIGGER_NAME AS 'Nombre del Trigger',
+    EVENT_MANIPULATION AS 'Evento',
+    EVENT_OBJECT_TABLE AS 'Tabla',
+    ACTION_TIMING AS 'Momento'
 FROM 
     INFORMATION_SCHEMA.TRIGGERS
 WHERE 
