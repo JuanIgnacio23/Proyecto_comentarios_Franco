@@ -262,6 +262,21 @@ En resumen, esta base de datos proporciona una estructura para gestionar y anali
        ORDER BY rating DESC;
 ```
 
+ ### Vista: vista_comentarios_region
+ 
+ #### Descripcion:  esta vista busca visualizar los comentarios por region.
+
+#### Columnas:
+ 
+   * region: marca area geográfica donde se ubica cada restaurante.
+   * total_comentarios: numero de comentarios que se obtiene en este caso por region.
+  
+
+#### Ejemplo de consulta:
+``` SQL
+       SELECT * FROM vista_comentarios_region
+```
+
  ## Documentación de Funciones
 
  ### Funcion: comentarios_region
