@@ -20,9 +20,6 @@ Se esta trabajando en el analisis de la competencia y demanda en la zona urbana 
 
 3.**Gestión de Comentarios**: La base de datos debe permitirnos registrar cada uno de los comentarios y calificaciones que se generan para cada restaurante, asi como tambien el usuario que lo genera. Esto es fundamental para conocer y analizar que es lo que esperan o valoran los usuarios de los restaurantes que visitan.
 
-4.**Registro de Fotografias**: Necesitamos un sistema que pueda registrar las imagenes que los usuarios publican junto a su comentario, con el fin de la percepcion visual del usuario cuando recuerda aquel restaurante sobre el que dejo una reseña.
-
-
 # Objetivo
 Diseñar una base de datos relacional que satisfaga la necesidad de recopilar información de la competencia y demanda que tendra el nuevo restaurante de la ciudad, a partir de los comentarios. La base de datos deberá ser eficiente para almacenar y gestionar los comentarios de Google sobre restautantes de la ciudad.
 
