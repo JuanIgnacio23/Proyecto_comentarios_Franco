@@ -50,9 +50,8 @@ Esta base de datos está diseñada para gestionar comentarios de restaurantes en
    Tabla intermedia que relaciona los restaurantes con sus cantegorías.
    Atributos: IDRESTAURANTE, IDCATEGORIA.
 
-6. **Fotos**:
-   Almacena las fotos que los usuarios publican junto a su comentario.
-   Atributos: IDFOTO, IDCOMENTARIO, URL_FOTO.
+6. **Advertencias**:
+   Almacena mensajes sobre los restaurantes a partir del trigger creado denominado 'restaurantes_populares'
 
 # Problemática Resuelta
 Esta base de datos permite gestionar las reseñas de los restaurantes y las demandas y/o valoraciones de los usuarios desde los comentarios de Google sobre los restaurantes de la ciudad. Algunos aspectos que abordan incluyen:
@@ -75,17 +74,17 @@ En resumen, esta base de datos proporciona una estructura para gestionar y anali
 |TOTAL_COMENTARIO|
 +----------------+
         | 1:n
-+-------------------+       +-------------------+          +--------------------------+      
-|   COMENTARIO      |       |    RESTAURANTE    |          |  RESTAURANTE_CATEGORIAS  |      
-+-------------------+       +-------------------+   1:n    +--------------------------+      
-| IDCOMENTARIO P    |  n:1  | IDRESTAURANTE PK  | <------- | IDCATEGORIA FK           |     
-| IDRESTUARANTE FK  |<------| NOMNRE_RESTAURANTE|          | RESTAURANTE FK           |
-| IDUSUARIO   FK    |       | DIRECCION         |          +--------------------------+ 
-| RATING            |       | REGION            |                        |
-| COMENTARIO        |       | RATING            |                        |    1:n
++-------------------+       +-------------------+              
+|   COMENTARIO      |       |    RESTAURANTE    |             
++-------------------+       +-------------------+      
+| IDCOMENTARIO P    |  n:1  | IDRESTAURANTE PK  |     
+| IDRESTUARANTE FK  |<------| NOMBRE_RESTAURANTE|          
+| IDUSUARIO   FK    |       | DIRECCION         |          
+| RATING            |       | REGION            |                        
+| COMENTARIO        |       | RATING            |                       
 |   USUARIOS        |       | TOTAL_COMENTARIO  | <----------- +-------------------+
 |                   |       +-------------------+      n:1     |    CATEGORIA      |  
-+-------------------+                 |                        +------------------+                                     |                        |                   |           
++-------------------+                 |                        +------------------+                                           
                                       |                        | IDCATEGORIA PK    |
                                       |  n:1                   | NOMBRE_CATEGORIA  |
                                       |                        +-------------------+
@@ -153,11 +152,6 @@ En resumen, esta base de datos proporciona una estructura para gestionar y anali
 
 
 
-
-  |           Tabla          |     Columna    |       Tipo de Datos        |
-  |:------------------------:|:--------------:|:--------------------------:|
-  | RESTAURANTE_CATEGORIAS   | ID_CATEGORIA   |  INT NOT NULL              |  
-  |                          | RESTAURANTE    |  INT NOT NULL              |
 
 
 
