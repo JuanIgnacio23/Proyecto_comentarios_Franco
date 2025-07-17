@@ -1,12 +1,4 @@
-# Entrega de proyecto final
 
-* Alumno: Juan Ignacio Franco
-
-* Comision: 57190
-
-* Tutor: Ariel Annone
-
-* Docente: Anderson Michel Torres
 
 # Temática del proyecto
 Se esta trabajando en el analisis de la competencia y demanda en la zona urbana donde se abrira un nuevo restaurante. Nos enfrentamos a la necesidad de diseñar una base de datos que contenga los servicios y caracteristicas que los restaurantes ofrecen, asi como tambien lo que las personas opinan del servicio ofrecido, para ello recopilamos datos de Google maps de cada uno de los restaurantes y sus comentarios. 
